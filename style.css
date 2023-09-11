@@ -1,29 +1,34 @@
-
-* {
-    padding: 0;
-    margin: 0;
+@font-face{
+    font-family: clockFont;
+    src: url(14-segment-led/14\ Segment\ LED\ Regular.ttf);
 }
 
-header {
-    width: 100vw;
-    height: 10vh;
-    display: flex;
-    font-size: 100%;
+@font-face{
+    font-family: spaceFont;
+    src: url(solar-space-demo/SOLAR\ SPACE\ DEMO.ttf);
+}
+
+body{
+    margin: 0;
+
+    background-color: rgba(38, 40, 58, 0.518);
 }
 
 section {
     display: flex;
-    height: 17vh;
 }
 
 section div {
     flex-wrap: wrap;
-    gap: 10vh;
-    width: 30%;
-    height: 80%;
-    border: 1px solid red;
-    background-color: gray;
-    margin: 0.5%;
+    gap: 10vw;
+
+    width: 8vw;
+    height: 16vh;
+    
+    border: 1px solid black;
+    margin: 1%;
+    box-sizing: border-box;
+
     text-align: center; 
     font-size: 3em;
 }
@@ -34,9 +39,11 @@ section div {
 }
 
 .cardMatch {
-    background-color: green;
     visibility: hidden;
+
+    background-color: green;
     opacity: 0;
+
     transition: all;
     transition-duration: 500ms;
 }
@@ -46,9 +53,11 @@ section div {
 }
 
 .cardNotMatch {
-    background-color: red;
     visibility: hidden;
+
+    background-color: red;
     opacity: 0;
+
     transition: all;
     transition-duration: 500ms;
 }
@@ -61,45 +70,33 @@ section div {
     background-color: white;
 }
 
-#title {
-    width: 34%;
-    height: 100%;
-    border: 1px solid black;
-}
-#buttons {
-    width: 34%;
-    height: 100%;
-    border: 1px solid black;
-}
-#timer {
-    width: 34%;
-    height: 100%;
-    border: 1px solid black;
+#menu {
+    width: 100vw;
+    height: 8vh;
+    display: flex;
+
+    padding: 0.6% 0.7%;
+    box-sizing: border-box;
+
+    background: rgba(33,35,48,255);
+    color: white;
 }
 
-#log {
-    background-color: beige;
-    position: fixed;
-    width: 70vw;
-    height: 70vh;
-    top: 16.5vh;
-    left: 16.5vw;
+#menu div {
+    width: 33%;
+}
+
+#name{
+    font-size: 2.5em;
+    font-family: spaceFont;
+}
+
+#buttons { 
     text-align: center;
 }
 
-#log h1 {
-    margin-top: 5%;
-}
-
-#form_layout {
-    border: 1px solid blue;
-    height: 30vh;
-    margin: 6%;
-}
-
-#form_layout input {
-    width: 100%;
-    height: 25%;
-    margin-top: 5%;
-
+#timer{
+    text-align: right;
+    font-family: clockFont;
+    font-size: 3em;
 }
