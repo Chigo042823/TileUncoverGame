@@ -5,72 +5,112 @@
      <meta name="viewport" content="width=device-width, initial-scale=1.0">
      <title>Document</title>
      <style>
-
+         @font-face{
+             font-family: clockFont;
+             src: url(resources/14-segment-led/14\ Segment\ LED\ Regular.ttf);
+         }
+         
+         @font-face{
+             font-family: spaceFont;
+             src: url(resources/solar-space-demo/SOLAR\ SPACE\ DEMO.ttf);
+         }
+         
+         body{
+             margin: 0;
+         
+             background-color: rgba(38, 40, 58, 0.518);
+         }
+         
          section {
              display: flex;
          }
-
+         
          section div {
              flex-wrap: wrap;
              gap: 10vw;
-             width: 30vw;
-             height: 10vh;
-             border: 1px solid red;
-             background-color: gray;
+         
+             width: 8vw;
+             height: 16vh;
+             
+             border: 1px solid black;
              margin: 1%;
+             box-sizing: border-box;
+         
              text-align: center; 
              font-size: 3em;
          }
-
+         
          .card {
              background-color: gray;
              font-size: 0;
          }
-
+         
          .cardMatch {
-             background-color: green;
              visibility: hidden;
+         
+             background-color: green;
              opacity: 0;
+         
              transition: all;
              transition-duration: 500ms;
          }
-
+         
          .cardMatchPending {
              background-color: green;
          }
-
+         
          .cardNotMatch {
-             background-color: red;
              visibility: hidden;
+         
+             background-color: red;
              opacity: 0;
+         
              transition: all;
              transition-duration: 500ms;
          }
-
+         
          .cardNotMatchPending {
              background-color: red;
          }
-
+         
          .cardClicked {
              background-color: white;
          }
-
+         
          #menu {
-            width: 98vw;
-            height: 5vh;
+             width: 100vw;
+             height: 8vh;
+             display: flex;
+         
+             padding: 0.6% 0.7%;
+             box-sizing: border-box;
+         
+             background: rgba(33,35,48,255);
+             color: white;
+         }
+         
+         #menu div {
+             width: 33%;
+         }
+         
+         #name{
+             font-size: 2.5em;
+             font-family: spaceFont;
+         }
+         
+         #buttons { 
+             text-align: center;
+         }
+         
+         #timer{
+             text-align: right;
+             font-family: clockFont;
+             font-size: 3em;
          }
 
          #gameTitle {
             width: 100%;
             text-align: center;
-            font-size: large;
-            font-weight: bold;
-         }
-
-         #timer {
-            position: fixed;
-            top: -1vh;
-            right: 2vw;
             font-size: large;
             font-weight: bold;
          }
@@ -82,9 +122,6 @@
             top: 20vh;
             left: 15vw;
             background-color: beige;
-         }
-
-         #log {
             transition: all;
             transition-duration: 1000ms;
             transition-timing-function: ease-in-out;
