@@ -17,20 +17,24 @@
          
          body{
              margin: 0;
+             overflow: hidden;
          
-             background-color: rgba(38, 40, 58, 0.518);
+             background: url("resources/universe_background.jpeg");
+             background-repeat: no-repeat;
+             background-size: cover;
          }
          
          section {
              display: flex;
+             justify-content: center;
          }
          
          section div {
              flex-wrap: wrap;
              gap: 10vw;
          
-             width: 8vw;
-             height: 16vh;
+             width: 6.8vw;
+             height: 13.6vh;
              
              border: 1px solid black;
              margin: 1%;
@@ -40,6 +44,7 @@
              font-size: 3em;
          }
          
+         /** cards **/
          .card {
              background-color: gray;
              font-size: 0;
@@ -77,12 +82,14 @@
              background-color: white;
          }
          
+         /** header **/
          #menu {
              width: 100vw;
-             height: 8vh;
+             height: 10vh;
              display: flex;
+             overflow: hidden;
          
-             padding: 0.6% 0.7%;
+             border: solid 2px white;
              box-sizing: border-box;
          
              background: rgba(33,35,48,255);
@@ -90,42 +97,25 @@
          }
          
          #menu div {
-             width: 20%;
-         }
-
-         p{
-            font-size: 2em;
-         }
-         
-         #name{
-             font-size: 1.5em;
-             font-family: Helvetica;
-         }
-
-         #number{
-             font-size: 1.5em;
-             font-family: Helvetica;
-         }
-         
-         #buttons { 
-             text-align: center;
+             width: 47%;
+             margin-left: 2vw;
          }
          
          #timer{
+             margin: -2% 0; 
+
              text-align: right;
              font-family: clockFont;
              font-size: 3em;
          }
 
-         #gameTitle {
-            width: 20%;
-          
-            text-align: center;
+         #gameTitle{
             font-size: large;
             font-weight: bold;
             font-family: spaceFont;
          }
 
+         /** login **/
          #log {
             width: 70vw;
             height: 60vh;
@@ -133,12 +123,15 @@
             position: fixed;
             top: 20vh;
             left: 15vw;
+
+            border: solid 2px white;
+            box-sizing: border-box;
+            border-radius: 30px;
           
-            background-color: beige;
+            background: rgba(33,35,48,255);
             font-family: Helvetica;
           
-            transition: all;
-            transition-duration: 1000ms;
+            transition: opacity 1000ms; 
             transition-timing-function: ease-in-out;
          }
 
@@ -162,6 +155,21 @@
             margin: auto;
          }
 
+         #name{
+             font-size: 1.5em;
+             font-family: Helvetica;
+         }
+
+         #number{
+             font-size: 1.5em;
+             font-family: Helvetica;
+         }
+
+         #startBtn{
+            font-size: 1.5em;
+         }
+
+         /** leaderboard **/
          #victoryScreen {
             position: fixed;
             visibility: hidden;
@@ -244,10 +252,6 @@
          #playAgain {
             margin-top: 1.5%;
          }
-
-         body {
-            overflow: hidden;
-         }
      </style>
  </head>
  <body>
@@ -309,20 +313,19 @@
            <div class="card" onclick="changeBG(this)" id="card40"></div>
         </section>
         <section>
-        <div class="card" onclick="changeBG(this)" id="card41"></div>
-        <div class="card" onclick="changeBG(this)" id="card42"></div>
-        <div class="card" onclick="changeBG(this)" id="card43"></div>
-        <div class="card" onclick="changeBG(this)" id="card44"></div>
-        <div class="card" onclick="changeBG(this)" id="card45"></div>
-        <div class="card" onclick="changeBG(this)" id="card46"></div>
-        <div class="card" onclick="changeBG(this)" id="card47"></div>
-        <div class="card" onclick="changeBG(this)" id="card48"></div>
-        <div class="card" onclick="changeBG(this)" id="card49"></div>
-        <div class="card" onclick="changeBG(this)" id="card50"></div>
+            <div class="card" onclick="changeBG(this)" id="card41"></div>
+            <div class="card" onclick="changeBG(this)" id="card42"></div>
+            <div class="card" onclick="changeBG(this)" id="card43"></div>
+            <div class="card" onclick="changeBG(this)" id="card44"></div>
+            <div class="card" onclick="changeBG(this)" id="card45"></div>
+            <div class="card" onclick="changeBG(this)" id="card46"></div>
+            <div class="card" onclick="changeBG(this)" id="card47"></div>
+            <div class="card" onclick="changeBG(this)" id="card48"></div>
+            <div class="card" onclick="changeBG(this)" id="card49"></div>
+            <div class="card" onclick="changeBG(this)" id="card50"></div>
         </section>
      </main>
      <div id="log">
-        <h1>TILE GAME</h1>
         <form action="" onsubmit="return false" novalidate>
             <div id="formLayout">
                     <p>Name:</p>
