@@ -26,12 +26,12 @@ function timer() {
         document.querySelector("#playerRank").innerHTML = "Rank: #" + pRank;
     }
 }
+
 let start_game = 0;
 function startGame() {
     start_game = 1;
     setInterval(() => timer(), 1000);
-    }
-
+}
 
 {
     let cards_i = 1;
@@ -98,9 +98,6 @@ function startGame() {
         }
     }
 
-
-
-
     function shuffleArray(array) {
         for (let i = array.length - 1; i > 0; i--) {
         const j = Math.floor(Math.random() * (i + 1));
@@ -137,4 +134,27 @@ function endGame() {
 
 function reset() {
     location.reload();
+}
+
+let ci = 1;
+function showAll() {
+    console.log("hi");
+    setInterval(() => showAllLogic(ci++), 60);
+    setTimeout(hideAll, 4500);
+}
+
+function hideAll() {
+    console.log("hello");
+    for (let i = 0; i < cards; i++) {
+        document.querySelector(".cardClicked").className = "card";
+    }
+}
+
+function showAllLogic(i) {
+    console.log("logic");
+    if (i <= cards) {
+        console.log("#card" + i);
+        document.querySelector("#card" + i).style.color = "black";
+        document.querySelector("#card" + i).className = "cardClicked";
+    }
 }
