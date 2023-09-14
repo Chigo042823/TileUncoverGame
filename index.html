@@ -14,6 +14,11 @@
              font-family: spaceFont;
              src: url(resources/solar-space-demo/SOLAR\ SPACE\ DEMO.ttf);
          }
+
+         @keyframes cardChoose{
+            from{opacity: 1}
+            to{opacity: 0.8}
+         }
          
          body{
              margin: 0;
@@ -41,13 +46,25 @@
              box-sizing: border-box;
          
              text-align: center; 
-             font-size: 3em;
+             font-size: 0;
+
+             background-color: white;
+             background-size: cover;
+             background-repeat: no-repeat;
+             background-position: center;
+
+             transition: all 1s;
+         }
+
+         section div:hover{
+            animation: cardChoose infinite;
+            transform: rotate(1deg);
          }
          
          /** cards **/
          .card {
-             background-color: gray;
              font-size: 0;
+
              transition: background-color;
              transition-duration: 500ms;
          }
@@ -84,6 +101,12 @@
              background-color: white;
          }
          
+         .cardClicked img{
+             opacity: 0;
+             visibility: hidden;
+             transition: all;
+             transition-duration: 500ms;
+         }
          /** header **/
          #menu {
              width: 100vw;
@@ -101,14 +124,15 @@
          #menu div {
              width: 47%;
              margin-left: 2vw;
+
+             font-size: 2vh;
          }
          
          #timer{
-             margin: -2% 0; 
+             margin: 0; 
 
              text-align: right;
              font-family: clockFont;
-             font-size: 3em;
          }
 
          #gameTitle{
@@ -261,6 +285,7 @@
      </style>
  </head>
  <body>
+    <audio loop autoplay hidden id="backgroundAudio"><source src="resources/labyrinth.mp3" type="audio/mpeg"></audio>
     <div id="menu">
         <div id="gameTitle">
             <h1>Tile Game</h1>
