@@ -30,6 +30,7 @@ function timer() {
 let start_game = 0;
 function startGame() {
     start_game = 1;
+    showAll();
     setInterval(() => timer(), 1000);
 }
 
