@@ -30,8 +30,8 @@ function timer() {
 let start_game = 0;
 function startGame() {
     start_game = 1;
-    showAll();
     setInterval(() => timer(), 1000);
+    backgroundAudio.play();
 }
 
 {
@@ -89,14 +89,14 @@ function startGame() {
                         console.log("Not a Match");
                         document.querySelector(".cardClicked").className = "cardNotMatchPending";
                         document.querySelector("#" + divId).className = "cardNotMatchPending";
-                        notMatchCounter++
+                        notMatchCounter++;
                     }  
                     faceUp = 0;
                     previousCard = 26; 
                 }
                 console.log("Face Up: " + faceUp);
             }
-        }
+        }  
     }
 
     function shuffleArray(array) {
@@ -120,6 +120,7 @@ function startGame() {
 
     while (cards_i <= cards) {
         document.querySelector("#card" + cards_i).innerHTML = card_val[cards_i - 1];
+        document.querySelector("#card" + cards_i).style.backgroundImage = "url('resources/image" + card_val[cards_i - 1] + ".png')";
         cards_i++
     }  
 }
@@ -135,27 +136,4 @@ function endGame() {
 
 function reset() {
     location.reload();
-}
-
-let ci = 1;
-function showAll() {
-    console.log("hi");
-    setInterval(() => showAllLogic(ci++), 60);
-    setTimeout(hideAll, 4500);
-}
-
-function hideAll() {
-    console.log("hello");
-    for (let i = 0; i < cards; i++) {
-        document.querySelector(".cardClicked").className = "card";
-    }
-}
-
-function showAllLogic(i) {
-    console.log("logic");
-    if (i <= cards) {
-        console.log("#card" + i);
-        document.querySelector("#card" + i).style.color = "black";
-        document.querySelector("#card" + i).className = "cardClicked";
-    }
 }
