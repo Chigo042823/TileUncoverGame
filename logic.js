@@ -49,9 +49,13 @@ function startGame() {
         let divId = id.id;
         let divClass = id.className;
         let divCoverIdIndex = id.innerHTML.indexOf("id") + 4;
-        let divCover = id.innerHTML.substr(divCoverIdIndex, 7);
-        let divVal = id.innerHTML.charAt(0);
+        let divCover = id.innerHTML.substr(divCoverIdIndex, 6);
+        if (divId.substr(4, 2) > 9) {
+            divCover = id.innerHTML.substr(divCoverIdIndex, 7);
+        }
+        let divVal = id.innerHTML.substr(0, 2);
         console.log(notMatchCounter);
+        console.log("value: " + divVal); 
         if (start_game == 1) {
             if (divClass != "cardClicked") { //if card is clicked
                 if (faceUp < 1) { //if no card is face up
@@ -131,10 +135,10 @@ function startGame() {
 
     while (cards_i <= cards) {
         if (cards_i < 10) {
-            document.querySelector("#card" + cards_i).innerHTML = card_val[cards_i - 1] + "<div class='cover' id='cover" + cards_i + "'></div>";
+            document.querySelector("#card" + cards_i).innerHTML = card_val[cards_i - 1] + " <div class='cover' id='cover" + cards_i + "'></div>";
             document.querySelector("#card" + cards_i).style.backgroundImage = "url('resources/image" + card_val[cards_i - 1] + ".png')";
         } else {
-            document.querySelector("#card" + cards_i).innerHTML = card_val[cards_i - 1] + "<div class='cover' id='cover" + cards_i + "'></div>";
+            document.querySelector("#card" + cards_i).innerHTML = card_val[cards_i - 1] + " <div class='cover' id='cover" + cards_i + "'></div>";
             document.querySelector("#card" + cards_i).style.backgroundImage = "url('resources/image" + card_val[cards_i - 1] + ".png')";
         }
         cards_i++

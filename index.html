@@ -82,9 +82,9 @@
         <form action="" onsubmit="return false" novalidate>
             <div id="formLayout">
                     <p>Name:</p>
-                    <input required type="text" id="name" placeholder="Enter Your Name...">
+                    <input onkeyup="validateName(this)" required type="text" id="name" placeholder="Enter Your Name...">
                     <p>Contact Number:</p>
-                    <input required type="number" id="number" placeholder="Enter Your Contact Number...">
+                    <input onkeyup="validateNumber(this)" required type="number" id="number" placeholder="Enter Your Contact Number...">
                     <button id="startBtn">Start Game</button>
             </div>
         </form>
@@ -111,4 +111,5 @@
  <script src="cookie.js"></script>
  <script src="menu.js"></script>
  <script src="leaderboard.js"></script>
+ <script src="inputValidation.js"></script>
  </html> 
