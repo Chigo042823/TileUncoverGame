@@ -1,26 +1,29 @@
 let time = 0;
 let time_fmt = "0:00";
 let pRank = 0;
+let coHide = 0;
 
 function timer() {
     if (endGame_i != 1) {
-        if (time < 60 && time < 10) {
-            time_fmt = "0:0" + time;
-        } else if (time < 60 && time >= 10) {
-            time_fmt = "0:" + time;
-        } else {
-            let seconds = time/60;
-            let minutes = Math.floor(seconds);
-            let leftover = time - (minutes * 60);
-            if (leftover < 60 && leftover < 10) {
-                time_fmt = minutes + ":0" + leftover;
-            } 
-            else if (leftover < 60 && leftover >= 10) {
-                time_fmt = minutes + ":" + leftover;
+        if (coHide != 0) {
+            if (time < 60 && time < 10) {
+                time_fmt = "0:0" + time;
+            } else if (time < 60 && time >= 10) {
+                time_fmt = "0:" + time;
+            } else {
+                let seconds = time/60;
+                let minutes = Math.floor(seconds);
+                let leftover = time - (minutes * 60);
+                if (leftover < 60 && leftover < 10) {
+                    time_fmt = minutes + ":0" + leftover;
+                } 
+                else if (leftover < 60 && leftover >= 10) {
+                    time_fmt = minutes + ":" + leftover;
+                }
             }
+            document.querySelector("#timer").innerHTML = "<h3>" + time_fmt + "</h3>";
+            time++  
         }
-        document.querySelector("#timer").innerHTML = "<h3>" + time_fmt + "</h3>";
-        time++  
     } else {
         document.querySelector("#playerScore").innerHTML = "Your Time: " + time_fmt;
         document.querySelector("#playerRank").innerHTML = "Rank: #" + pRank;
@@ -162,6 +165,7 @@ function hideAll() {
     for (let i = 0; i < cards; i++) {
         document.querySelector(".coverHide").className = "cover";
     }
+    coHide = 1;
 }
 
 function showAllLogic(i) {
