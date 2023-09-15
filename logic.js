@@ -46,7 +46,9 @@ function startGame() {
     function changeBG(id) {
         let divId = id.id;
         let divClass = id.className;
-        let divContent = id.innerHTML;
+        let divCoverIdIndex = id.innerHTML.indexOf("id") + 4;
+        let divCover = id.innerHTML.substr(divCoverIdIndex, 7);
+        let divVal = id.innerHTML.charAt(0);
         console.log(notMatchCounter);
         if (start_game == 1) {
             if (divClass != "cardClicked") { //if card is clicked
@@ -54,29 +56,35 @@ function startGame() {
                     if (matchCounter == 1) {
                         for (let i = 0; i < 2; i++) {
                             document.querySelector(".cardMatchPending").className = "cardMatch";
+                            document.querySelector(".coverHide").className = "cover";
                         }
                         matchCounter = 0;
                     }
                     if (notMatchCounter == 1) {
                         for (let i = 0; i < 2; i++) {
                             document.querySelector(".cardNotMatchPending").className = "card";
+                            document.querySelector(".coverHide").className = "cover";
                         }
                         notMatchCounter = 0;
                     }
                     if (divClass == "card") { //if card is face down
                         document.querySelector("#" + divId).className = "cardClicked";
-                        console.log("Current: " + divContent);
+                        console.log("#" + divCover);
+                        document.getElementById(divCover).className = "coverHide";
+                        console.log("Current: " + divVal);
                         console.log("Previous: " + previousCard);
-                        previousCard = divContent;
+                        previousCard = divVal;
                         faceUp++
                     }
                 } else { //if 1 card is already face up
-                    if(divContent == previousCard) { //if match
+                    if(divVal == previousCard) { //if match
                         console.log("match");
                         if (matches != cards/2) { // if last match
+                            document.getElementById(divCover).className = "coverHide";
                             document.querySelector(".cardClicked").className = "cardMatchPending";
                             document.querySelector("#" + divId).className = "cardMatchPending";
                         } else {
+                            document.getElementById(divCover).className = "coverHide";
                             document.querySelector(".cardClicked").className = "cardMatch";
                             document.querySelector("#" + divId).className = "cardMatch";  
                             endGame();
@@ -87,6 +95,7 @@ function startGame() {
                         matches++
                     } else if (previousCard != 26) {
                         console.log("Not a Match");
+                        document.getElementById(divCover).className = "coverHide";
                         document.querySelector(".cardClicked").className = "cardNotMatchPending";
                         document.querySelector("#" + divId).className = "cardNotMatchPending";
                         notMatchCounter++;
@@ -119,8 +128,13 @@ function startGame() {
     shuffleArray(card_val);
 
     while (cards_i <= cards) {
-        document.querySelector("#card" + cards_i).innerHTML = card_val[cards_i - 1];
-        document.querySelector("#card" + cards_i).style.backgroundImage = "url('resources/image" + card_val[cards_i - 1] + ".png')";
+        if (cards_i < 10) {
+            document.querySelector("#card" + cards_i).innerHTML = card_val[cards_i - 1] + "<div class='cover' id='cover" + cards_i + " '></div>";
+            document.querySelector("#card" + cards_i).style.backgroundImage = "url('resources/image" + card_val[cards_i - 1] + ".png')";
+        } else {
+            document.querySelector("#card" + cards_i).innerHTML = card_val[cards_i - 1] + "<div class='cover' id='cover" + cards_i + "'></div>";
+            document.querySelector("#card" + cards_i).style.backgroundImage = "url('resources/image" + card_val[cards_i - 1] + ".png')";
+        }
         cards_i++
     }  
 }

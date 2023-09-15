@@ -24,7 +24,7 @@ function getLeaderboard() {
     let i = 1;
     player_sorted.forEach(element => {
         let time_score = '';
-        let time = (element.time / 1000) - 1;
+        let time = element.time / 1000;
         if (time < 60 && time < 10) {
             time_score = "0:0" + time;
         } else if (time < 60 && time >= 10) {

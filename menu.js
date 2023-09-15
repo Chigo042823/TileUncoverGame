@@ -12,3 +12,4 @@ document.querySelector("#startBtn").addEventListener("click", () => {
         startGame();
     }
 })
+
