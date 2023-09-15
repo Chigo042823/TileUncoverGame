@@ -23,10 +23,9 @@
          body{
              margin: 0;
              overflow: hidden;
-         
              background: url("resources/universe_background.jpeg");
              background-repeat: no-repeat;
-             background-size: cover;
+             background-size: auto;
          }
          
          section {
@@ -64,9 +63,10 @@
          /** cards **/
          .card {
              font-size: 0;
-             perspective: 1000px;
-             background-color: gray;
-             transition: background-color;
+             perspective: 1000px;   
+             transition: background-image;
+             background-size: cover;
+             background-position: center;
              transition-duration: 500ms;
          }
          

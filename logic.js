@@ -30,11 +30,10 @@ function timer() {
 let start_game = 0;
 function startGame() {
     start_game = 1;
+    showAll();  
     setInterval(() => timer(), 1000);
     backgroundAudio.play();
 }
-
-{
     let cards_i = 1;
     let cards = 50;
     let faceUp = 0;
@@ -129,15 +128,14 @@ function startGame() {
 
     while (cards_i <= cards) {
         if (cards_i < 10) {
-            document.querySelector("#card" + cards_i).innerHTML = card_val[cards_i - 1] + "<div class='cover' id='cover" + cards_i + " '></div>";
+            document.querySelector("#card" + cards_i).innerHTML = card_val[cards_i - 1] + "<div class='cover' id='cover" + cards_i + "'></div>";
             document.querySelector("#card" + cards_i).style.backgroundImage = "url('resources/image" + card_val[cards_i - 1] + ".png')";
         } else {
             document.querySelector("#card" + cards_i).innerHTML = card_val[cards_i - 1] + "<div class='cover' id='cover" + cards_i + "'></div>";
             document.querySelector("#card" + cards_i).style.backgroundImage = "url('resources/image" + card_val[cards_i - 1] + ".png')";
         }
         cards_i++
-    }  
-}
+    }
 
 let endGame_i = 0;
 
@@ -150,4 +148,27 @@ function endGame() {
 
 function reset() {
     location.reload();
+}
+
+let ci = 1;
+function showAll() {
+    console.log("hi");
+    setInterval(() => showAllLogic(ci++), 60);
+    setTimeout(hideAll, 4400);
+}
+
+function hideAll() {
+    console.log("hello");
+    for (let i = 0; i < cards; i++) {
+        document.querySelector(".coverHide").className = "cover";
+    }
+}
+
+function showAllLogic(i) {
+    console.log("logic");
+    if (i <= cards) {
+        console.log("#card" + i);
+        document.querySelector("#card" + i).style.color = "black";
+        document.querySelector("#cover" + i).className = "coverHide";
+    }
 }
