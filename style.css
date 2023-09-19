@@ -36,6 +36,8 @@
              border: 1px solid black;
              margin: 1%;
              box-sizing: border-box;
+             border-radius: 10px;
+             overflow: hidden;
          
              text-align: center; 
              font-size: 0;
@@ -51,6 +53,12 @@
          section div:hover{
             animation: cardChoose infinite;
             transform: rotate(1deg);
+         }
+
+         img{
+            width: 6.8vw;
+            height: 13.6vh;
+            border-radius: 10px;
          }
          
          /** cards **/
