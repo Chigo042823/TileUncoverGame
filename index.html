@@ -8,52 +8,56 @@
  </head>
  <body>
     <audio loop autoplay hidden id="backgroundAudio"><source src="resources/labyrinth.mp3" type="audio/mpeg"></audio>
-    <div id="menu">
-        <div id="gameTitle">
-            <h1>Tile Game</h1>
+    <div class="container-fluid" id="menu">
+        <div class="row">
+            <div class="col-12">
+                <h1 class="text-center" id="gameTitle">Tile Game</h1>
+            </div>
         </div>
-        <div id="timer">
-            <h3>0:00</h3>
+        <div class="row">
+            <div class="col-12">
+                <h3 class="text-right" id="timer">0:00</h3>
+            </div>
         </div>
     </div>
-     <main>
-         <section>
+    <main>
+        <section class="row">
             <div class="card" onclick="changeBG(this)" id="card1"></div>
-             <div class="card" onclick="changeBG(this)" id="card2"></div>
-             <div class="card" onclick="changeBG(this)" id="card3"></div>
-             <div class="card" onclick="changeBG(this)" id="card4"></div>
-             <div class="card" onclick="changeBG(this)" id="card5"></div>
-             <div class="card" onclick="changeBG(this)" id="card6"></div>
-             <div class="card" onclick="changeBG(this)" id="card7"></div>
-             <div class="card" onclick="changeBG(this)" id="card8"></div>
-             <div class="card" onclick="changeBG(this)" id="card9"></div>
-             <div class="card" onclick="changeBG(this)" id="card10"></div>
-         </section>
-         <section>
-            <div class="card" onclick="changeBG(this)" id="card11"></div>
-            <div class="card" onclick="changeBG(this)" id="card12"></div>
-            <div class="card" onclick="changeBG(this)" id="card13"></div>
-            <div class="card" onclick="changeBG(this)" id="card14"></div>
-            <div class="card" onclick="changeBG(this)" id="card15"></div>
-            <div class="card" onclick="changeBG(this)" id="card16"></div>
-            <div class="card" onclick="changeBG(this)" id="card17"></div>
-            <div class="card" onclick="changeBG(this)" id="card18"></div>
-            <div class="card" onclick="changeBG(this)" id="card19"></div>
-            <div class="card" onclick="changeBG(this)" id="card20"></div>
+            <div class="card" onclick="changeBG(this)" id="card2"></div>
+            <div class="card" onclick="changeBG(this)" id="card3"></div>
+            <div class="card" onclick="changeBG(this)" id="card4"></div>
+            <div class="card" onclick="changeBG(this)" id="card5"></div>
+            <div class="card" onclick="changeBG(this)" id="card6"></div>
+            <div class="card" onclick="changeBG(this)" id="card7"></div>
+            <div class="card" onclick="changeBG(this)" id="card8"></div>
+            <div class="card" onclick="changeBG(this)" id="card9"></div>
+            <div class="card" onclick="changeBG(this)" id="card10"></div>
         </section>
-        <section>
-            <div class="card" onclick="changeBG(this)" id="card21"></div>
-            <div class="card" onclick="changeBG(this)" id="card22"></div>
-            <div class="card" onclick="changeBG(this)" id="card23"></div>
-            <div class="card" onclick="changeBG(this)" id="card24"></div>
-            <div class="card" onclick="changeBG(this)" id="card25"></div>
-            <div class="card" onclick="changeBG(this)" id="card26"></div>
-            <div class="card" onclick="changeBG(this)" id="card27"></div>
-            <div class="card" onclick="changeBG(this)" id="card28"></div>
-            <div class="card" onclick="changeBG(this)" id="card29"></div>
-            <div class="card" onclick="changeBG(this)" id="card30"></div>
+        <section class="row">
+           <div class="card" onclick="changeBG(this)" id="card11"></div>
+           <div class="card" onclick="changeBG(this)" id="card12"></div>
+           <div class="card" onclick="changeBG(this)" id="card13"></div>
+           <div class="card" onclick="changeBG(this)" id="card14"></div>
+           <div class="card" onclick="changeBG(this)" id="card15"></div>
+           <div class="card" onclick="changeBG(this)" id="card16"></div>
+           <div class="card" onclick="changeBG(this)" id="card17"></div>
+           <div class="card" onclick="changeBG(this)" id="card18"></div>
+           <div class="card" onclick="changeBG(this)" id="card19"></div>
+           <div class="card" onclick="changeBG(this)" id="card20"></div>
+       </section>
+       <section class="row">
+           <div class="card" onclick="changeBG(this)" id="card21"></div>
+           <div class="card" onclick="changeBG(this)" id="card22"></div>
+           <div class="card" onclick="changeBG(this)" id="card23"></div>
+           <div class="card" onclick="changeBG(this)" id="card24"></div>
+           <div class="card" onclick="changeBG(this)" id="card25"></div>
+           <div class="card" onclick="changeBG(this)" id="card26"></div>
+           <div class="card" onclick="changeBG(this)" id="card27"></div>
+           <div class="card" onclick="changeBG(this)" id="card28"></div>
+           <div class="card" onclick="changeBG(this)" id="card29"></div>
+           <div class="card" onclick="changeBG(this)" id="card30"></div>
         </section>
-        <section>
+        <section class="row">
            <div class="card" onclick="changeBG(this)" id="card31"></div>
            <div class="card" onclick="changeBG(this)" id="card32"></div>
            <div class="card" onclick="changeBG(this)" id="card33"></div>
@@ -65,7 +69,7 @@
            <div class="card" onclick="changeBG(this)" id="card39"></div>
            <div class="card" onclick="changeBG(this)" id="card40"></div>
         </section>
-        <section>
+        <section class="row">
             <div class="card" onclick="changeBG(this)" id="card41"></div>
             <div class="card" onclick="changeBG(this)" id="card42"></div>
             <div class="card" onclick="changeBG(this)" id="card43"></div>
@@ -77,8 +81,8 @@
             <div class="card" onclick="changeBG(this)" id="card49"></div>
             <div class="card" onclick="changeBG(this)" id="card50"></div>
         </section>
-     </main>
-     <div id="log">
+    </main>
+    <div id="log">
         <form action="" onsubmit="return false" novalidate>
             <div id="formLayout">
                     <p>Name:</p>
@@ -89,13 +93,17 @@
             </div>
         </form>
     </div>
-    <div id="victoryScreen">
+    <div id="victoryScreen" class="container">
         <div id="victoryTitle">
-            <h1>You Win</h1>
+            <h1>You Win!</h1>
         </div>
-        <div id="score">
-            <h2 id="playerScore">Your Score: </h2>
-            <h2 id="playerRank">Rank: </h2>
+        <div id="score" class="row">
+            <div class="col-md-6">
+                <h2 id="playerScore">Your Score: </h2>
+            </div>
+            <div class="col-md-6">
+                <h2 id="playerRank">Rank: </h2>
+            </div>
         </div>
         <div id="leaderboardContainer">
             <div id="leaderboardTitle">
@@ -103,10 +111,13 @@
             </div>
             <div id="leaderboard">
             </div>
-            <button id="playAgain" onclick="reset()">Play Again</button>
+            <button id="playAgain" class="btn btn-primary" onclick="reset()">Play Again</button>
         </div>
     </div>
+    
  </body>
+ <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+ <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
  <script src="logic.js"></script>
  <script src="cookie.js"></script>
  <script src="menu.js"></script>
