@@ -1,305 +1,304 @@
 @font-face{
-             font-family: clockFont;
-             src: url(resources/font/digital-7.ttf);
-         }
-         
-         @font-face{
-             font-family: spaceFont;
-             src: url(resources/solar-space-demo/SOLAR\ SPACE\ DEMO.ttf);
-         }
+    font-family: clockFont;
+    src: url(resources/font/digital-7.ttf);
+}
 
-         @keyframes cardChoose{
-            from{opacity: 1}
-            to{opacity: 0.8}
-         }
-         
-         body{
-             margin: 0;
-             overflow: hidden;
-             background: url("resources/universe_background.jpeg");
-             background-repeat: no-repeat;
-             background-size: auto;
-         }
-         
-         section {
-             display: flex;
-             justify-content: center;
-         }
-         
-         section div {
-             flex-wrap: wrap;
-             gap: 10vw;
-         
-             width: 6.8vw;
-             height: 13.6vh;
-             
-             border: 1px solid black;
-             margin: 1%;
-             box-sizing: border-box;
-             border-radius: 10px;
-             overflow: hidden;
-         
-             text-align: center; 
-             font-size: 0;
+@font-face{
+    font-family: spaceFont;
+    src: url(resources/solar-space-demo/SOLAR\ SPACE\ DEMO.ttf);
+}
 
-             background-color: white;
-             background-size: cover;
-             background-repeat: no-repeat;
-             background-position: center;
+@keyframes cardChoose{
+   from{opacity: 1}
+   to{opacity: 0.8}
+}
 
-             transition: all 1s;
-         }
+body{
+    margin: 0;
+    overflow: hidden;
+    background: url("resources/universe_background.jpeg");
+    background-repeat: no-repeat;
+    background-size: auto;
+}
 
-         section div:hover{
-            animation: cardChoose infinite;
-            transform: rotate(1deg);
-         }
+section {
+    display: flex;
+    justify-content: center;
+}
 
-         img{
-            width: 6.8vw;
-            height: 13.6vh;
-            border-radius: 10px;
-         }
-         
-         /** cards **/
-         .card {
-             font-size: 0;
-             perspective: 1000px;   
-             transition: background-image;
-             background-size: cover;
-             background-position: center;
-             transition-duration: 500ms;
-         }
-         
-         .cardMatch {
-             visibility: hidden;
-         
-             background-color: green;
-             opacity: 0;
-         
-             transition: all;
-             transition-duration: 500ms;
-         }
-         
-         .cardMatchPending {
-             background-color: green;
-         }
-         
-         .cardNotMatch {
-             visibility: hidden;
-         
-             background-color: red;
-             opacity: 0;
-         
-             transition: all;
-             transition-duration: 500ms;
-         }
-         
-         .cardNotMatchPending {
-             background-color: red;
-         }
-         
-         .cardClicked {
-             background-color: white;
-         }
-         
-         .cardClicked img{
-             opacity: 0;
-             visibility: hidden;
-             transition: all;
-             transition-duration: 500ms;
-         }
-         /** header **/
-         #menu {
-             width: 100vw;
-             height: 10vh;
-             display: flex;
-             overflow: hidden;
-         
-             border: solid 2px white;
-             box-sizing: border-box;
-         
-             background: rgba(33,35,48,255);
-             color: white;
-         }
-         
-         #menu div {
-             width: 47%;
-             margin-left: 2vw;
+section div {
+    flex-wrap: wrap;
+    gap: 10vw;
 
-             font-size: 2vh;
-         }
-         
-         #timer{
-             margin: 0; 
-             font-family: clockFont;
-             text-align: right;
-             color: black;
-         }
+    width: 6.8vw;
+    height: 13.6vh;
+    
+    border: 1px solid black;
+    margin: 1%;
+    box-sizing: border-box;
+    border-radius: 10px;
+    overflow: hidden;
 
-         #gameTitle{
-            font-size: large;
-            font-weight: bold;
-            font-family: spaceFont;
-         }
+    text-align: center; 
+    font-size: 0;
 
-         /** login **/
-         #log {
-            width: 70vw;
-            height: 60vh;
-          
-            position: fixed;
-            top: 20vh;
-            left: 15vw;
+    background-color: white;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
 
-            border: solid 2px white;
-            box-sizing: border-box;
-            border-radius: 30px;
-          
-            background: rgba(33,35,48,255);
-            font-family: Helvetica;
-          
-            transition: opacity 1000ms; 
-            transition-timing-function: ease-in-out;
-         }
+    transition: all 1s;
+}
 
-         #formLayout {
-            margin: auto;
-            margin-top: 3%;
-          
-            display: flex;
-            flex-wrap: wrap;
-          
-            width: 80%;
-            height: 70%;
-         }
+section div:hover{
+   animation: cardChoose infinite;
+   transform: rotate(1deg);
+}
 
-         #formLayout input {
-            width: 100%;
-            margin-bottom: 2%;
-         }
+img{
+   width: 6.8vw;
+   height: 13.6vh;
+   border-radius: 10px;
+}
 
-         #formLayout button {
-            margin: auto;
-         }
+/** cards **/
+.card {
+    font-size: 0;
+    perspective: 1000px;   
+    transition: background-image;
+    background-size: cover;
+    background-position: center;
+    transition-duration: 500ms;
+}
 
-         #name{
-             font-size: 1.5em;
-             font-family: Helvetica;
-         }
+.cardMatch {
+    visibility: hidden;
 
-         #number{
-             font-size: 1.5em;
-             font-family: Helvetica;
-         }
+    background-color: green;
+    opacity: 0;
 
-         #startBtn{
-            font-size: 1.5em;
-         }
+    transition: all;
+    transition-duration: 500ms;
+}
 
-         /** leaderboard **/
-         #victoryScreen {
-            position: fixed;
-            visibility: hidden;
-          
-            width: 70vw;
-            height: 90vh;
-          
-            position: fixed;
-            top: 5vh;
-            left: 15vw;
-          
-            border: solid 2px white;
-            box-sizing: border-box;
-         
-            background: rgba(33,35,48,255);
-         }
+.cardMatchPending {
+    background-color: green;
+}
 
-         #victoryTitle {
-            width: 90%;
-            height: 10%;
-          
-            margin: auto;
-            text-align: center;
-         }
+.cardNotMatch {
+    visibility: hidden;
 
-         #score {
-            width: 90%;
-            height: 10%;
-          
-            margin: auto;
-            display: flex;
-         }
+    background-color: red;
+    opacity: 0;
 
-         #playerScore {
-            margin-left: 5%;
-         }
+    transition: all;
+    transition-duration: 500ms;
+}
 
-         #playerRank {
-            margin-left: auto;
-            margin-right: 9%;
-         }
+.cardNotMatchPending {
+    background-color: red;
+}
 
-         #leaderboardContainer {
-            margin: auto;
-            text-align: center;
-          
-            width: 90%;
-            height: 70%;
-         }
+.cardClicked {
+    background-color: white;
+}
 
-         #leaderboardTitle {
-            height: 10%;
-         }
+.cardClicked img{
+    opacity: 0;
+    visibility: hidden;
+    transition: all;
+    transition-duration: 500ms;
+}
+/** header **/
+#menu {
+    width: 100vw;
+    height: 10vh;
+    display: flex;
+    overflow: hidden;
 
-         #leaderboard {
-            border: 1px solid black;
-          
-            width: 100%;
-            height: 85%;
-          
-            background-color: white;
-            overflow: auto;
-         }
+    border: solid 2px white;
+    box-sizing: border-box;
 
-         .player {
-            width: 100%;
-            border: 1px solid gray;
-          
-            text-align: left;
-            display: flex;
-         }
+    background: rgba(33,35,48,255);
+    color: white;
+}
 
-         #rank {
-            margin-left: 2%;
-            margin-right: 4%;
-         }
+#menu div {
+    width: 47%;
+    margin-left: 2vw;
 
-         #pTime {
-            margin-left: auto;
-            margin-right: 3%;
-         }
+    font-size: 2vh;
+}
 
-         #playAgain {
-            margin-top: 1.5%;
-         }
+#timer{
+    font-family: clockFont;
+    color: black;
+}
 
-        /* .card::backdrop {
+#gameTitle{
+   font-family: spaceFont;
+}
 
-        } */
+/** login **/
+#log {
+   width: 70vw;
+   height: 60vh;
+ 
+   position: fixed;
+   top: 20vh;
+   left: 15vw;
 
-        .cover {
-         width: 100%;
-         height: 100%;
-         background-image: url("resources/imageBG.jpg");
-         z-index: 2;
-        }
+   border: solid 2px white;
+   box-sizing: border-box;
+   border-radius: 30px;
+ 
+   background: rgba(33,35,48,255);
+   font-family: Helvetica;
+ 
+   transition: opacity 1000ms; 
+   transition-timing-function: ease-in-out;
+}
 
-        .coverHide {
-         visibility: hidden;
-         transition: none;
-        }
+#formLayout {
+   margin: auto;
+   margin-top: 3%;
+ 
+   display: flex;
+   flex-wrap: wrap;
+ 
+   width: 80%;
+   height: 70%;
+}
 
-        #timer {
-         color: white;
-        }
+#formLayout label{
+   font-size: 2em;
+   color: white;
+}
+
+#formLayout input {
+   width: 100%;
+   margin-bottom: 2%;
+}
+
+#startBtn{
+   margin: auto;
+}
+
+#name{
+    font-size: 1.5em;
+    font-family: Helvetica;
+}
+
+#number{
+    font-size: 1.5em;
+    font-family: Helvetica;
+}
+
+#startBtn{
+   font-size: 1.5em;
+}
+
+/** leaderboard **/
+#victoryScreen {
+   position: fixed;
+   visibility: hidden;
+ 
+   width: 70vw;
+   height: 90vh;
+ 
+   position: fixed;
+   top: 5vh;
+   left: 15vw;
+ 
+   border: solid 2px white;
+   box-sizing: border-box;
+
+   color: white;
+
+   background: rgba(33,35,48,255);
+}
+
+#victoryTitle {
+   width: 90%;
+   height: 10%;
+ 
+   margin: auto;
+   text-align: center;
+}
+
+#score {
+   width: 90%;
+   height: 10%;
+ 
+   margin: auto;
+   display: flex;
+}
+
+#playerScore {
+   margin-left: 5%;
+}
+
+#playerRank {
+   margin-left: auto;
+   margin-right: 9%;
+}
+
+#leaderboardContainer {
+   margin: auto;
+   text-align: center;
+ 
+   width: 90%;
+   height: 70%;
+}
+
+#leaderboardTitle {
+   height: 10%;
+}
+
+#leaderboard {
+   border: 1px solid black;
+ 
+   width: 100%;
+   height: 85%;
+ 
+   background-color: white;
+   overflow: auto;
+}
+
+.player {
+   width: 100%;
+   border: 1px solid gray;
+ 
+   text-align: left;
+   display: flex;
+}
+
+#rank {
+   margin-left: 2%;
+   margin-right: 4%;
+}
+
+#pTime {
+   margin-left: auto;
+   margin-right: 3%;
+}
+
+#playAgain {
+   margin-top: 1.5%;
+}
+
+.cover {
+width: 100%;
+height: 100%;
+background-image: url("resources/imageBG.jpg");
+z-index: 2;
+}
+
+.coverHide {
+visibility: hidden;
+transition: none;
+}
+
+#timer {
+color: white;
+}
