@@ -1,15 +1,13 @@
 let Pname = '';
 let PcontactNumber = 0;
 
-document.querySelector("#startBtn").addEventListener("click", () => {
-    Pname = document.querySelector("#name").value;
-    PcontactNumber = document.querySelector("#number").value;
+$("#startBtn").click(() => {
+    Pname = $("#name").val();
+    PcontactNumber = $("#number").val();
     if (Pname != '' && PcontactNumber != '') {
-        console.log("clicked");
         getInfo();
-        document.querySelector("#log").style.opacity = "0%";
-        document.querySelector("#log").style.visibility = "hidden";
+        $("#log").css("opacity", "0%");
+        $("#log").css("visibility", "hidden");
         startGame();
     }
 })
-
