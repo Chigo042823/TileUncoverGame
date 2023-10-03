@@ -9,8 +9,8 @@ let contactNumber = 0;
 
 function getInfo() {
     let userNum = parseInt(getCookie("users")) + 1;
-    playerName = document.querySelector("#name").value;
-    contactNumber = document.querySelector("#number").value;
+    playerName = $("#name").val();
+    contactNumber = $("#number").val();
     setCookie(playerName, contactNumber, 1);
     console.log(playerName);
 }
