@@ -8,10 +8,9 @@ function getLeaderboard() {
         }
     }); 
     let player_sorted = [];
-    console.log(players)
     players.forEach(element => {
         let pn = element.substr(0, element.indexOf("="));
-        let pt = element.substr(element.indexOf("/") + 1, element.indexOf("|") - element.indexOf("/") - 1);
+        let pt = element.substr(element.indexOf("") + 1, element.indexOf("|") - element.indexOf("/") - 1);
         let pt_ms = element.substr(element.indexOf("|") + 1) * 1000;
         player_sorted.push({uname: pn, time: pt_ms});
     });
@@ -24,7 +23,7 @@ function getLeaderboard() {
     let i = 1;
     player_sorted.forEach(element => {
         let time_score = '';
-        let time = element.time / 1000;
+        let time = (element.time / 1000) - 1;
         if (time < 60 && time < 10) {
             time_score = "0:0" + time;
         } else if (time < 60 && time >= 10) {
@@ -42,8 +41,9 @@ function getLeaderboard() {
         }
         console.log(time_score);
         if (i <= player_sorted.length) {
-            document.querySelector("#leaderboard").insertAdjacentHTML("beforeend", 
-            "<div class='player'><h3 id=rank>" + i + "</h3><p id=pName>" + element.uname + "</p><p id=pTime>" + time_score + "</p></div>")
+            $("#leaderboard").append(
+                "<div class='player'><h3 id=rank>" + i + "</h3><p id=pName>" + element.uname + "</p><p id=pTime>" + time_score + "</p></div>"
+            );
         }
         if (Pname == element.uname) {
             pRank = i;
