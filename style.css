@@ -302,3 +302,7 @@ transition: none;
 #timer {
 color: white;
 }
+
+.player {
+   color: black;
+}
